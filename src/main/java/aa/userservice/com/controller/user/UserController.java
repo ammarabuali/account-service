@@ -5,7 +5,6 @@ import aa.userservice.com.model.dto.UserDto;
 import aa.userservice.com.model.entity.UserEntity;
 import aa.userservice.com.model.reponse.CreateUserResponse;
 import aa.userservice.com.model.reponse.DeleteResponse;
-import aa.userservice.com.model.request.DeleteUserRequest;
 import aa.userservice.com.model.request.FindUserRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;

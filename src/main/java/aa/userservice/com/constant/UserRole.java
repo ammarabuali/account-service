@@ -1,5 +1,5 @@
 package aa.userservice.com.constant;
 
 public enum UserRole {
-    ADMIN,USER;
+    ADMIN,USER
 }

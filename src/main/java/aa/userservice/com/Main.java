@@ -8,9 +8,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableMongoRepositories(basePackages = "aa.userservice.com.repo")
 public class Main {
-
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
-
 }

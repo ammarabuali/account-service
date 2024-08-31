@@ -4,13 +4,11 @@ import aa.userservice.com.model.dto.UserDto;
 import aa.userservice.com.model.entity.UserEntity;
 import aa.userservice.com.model.reponse.CreateUserResponse;
 import aa.userservice.com.model.reponse.DeleteResponse;
-import aa.userservice.com.model.request.DeleteUserRequest;
 import aa.userservice.com.model.request.FindUserRequest;
 import aa.userservice.com.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
