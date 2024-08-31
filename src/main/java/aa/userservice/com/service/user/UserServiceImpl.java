@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
@@ -57,7 +58,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto findByUsername(String username) {
         try {
-            UserEntity user = userRepository.findByUsername(username).orElseThrow();
+            UserEntity user = userRepository.findByUsername(username.toLowerCase()).orElseThrow();
             return UserMapper.INSTANCE.toDto(user);
         } catch (NoSuchElementException e) {
             throw new UsernameNotFoundException("user not found " + username + " " + e.getMessage());
@@ -71,9 +72,11 @@ public class UserServiceImpl implements UserService {
         try {
             log.info("Creating new user {}", user.getUsername());
             validateUserNonExistence(user);
+            user.setEmail(user.getEmail().toLowerCase());
+            user.setUsername(user.getUsername().toLowerCase());
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             user.setRole(UserRole.USER.name());
-            user.setPermissions(new ArrayList<>()); //give default permissions to user role
+            user.setPermissions(new ArrayList<>()); //give default permissions to "user" role
             userRepository.save(user);
             return CreateUserResponse.builder().created(true).build();
         } catch (UserAlreadyExistsException e) {
