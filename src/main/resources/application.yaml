@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: user-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/User
+server:
+  servlet:
+    context-path: /account/v1
+
+logging:
+  level:
+    root: INFO
