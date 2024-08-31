@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableMongoRepositories(basePackages = "aa.userservice.com.repo")
-public class UserServiceApplication {
+public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserServiceApplication.class, args);
+        SpringApplication.run(Main.class, args);
     }
 
 }
